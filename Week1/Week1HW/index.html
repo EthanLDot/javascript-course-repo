@@ -21,10 +21,26 @@
         <label for  = "ast">Alaska Standard Time</label><br>
         <input name = "timezone", type = "radio" value = "hst" id = "hst">
         <label for  = "hst">Hawaii-Aleutian Standard Time</label><br>
-        <button type ="button" value = "Submit">Submit</button>
+        <button type ="button" value = "Submit" onclick="readForm()">Submit</button>
     </form>
     <br>
     <div id = "printtz">
+
+        <script type = "text/javascript">
+        function readForm(){
+            radioButtons = document.getElementsByName("timezone");
+            inputVal = radioButtons[0].value;
+            for(var i = 0; i < radioButtons.length; i++)
+            {
+                if(radioButtons[i].checked == true)
+                {
+                    inputVal = radioButtons[i].value;
+                }
+            }
+            document.getElementById("printtz").innerHTML = inputVal;
+
+        }
+        </script>
 
 
     </div>
