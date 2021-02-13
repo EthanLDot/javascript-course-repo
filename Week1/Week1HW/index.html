@@ -7,6 +7,26 @@
     <title>myDocument</title>
 </head>
 <body>
-    <p>Hello World!</p>
+    <form>
+        <p>Select Your Timezone:</p>
+        <input name = "timezone", type = "radio" value = "est" id = "est">
+        <label for  = "est">Eastern Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "cst" id = "cst">
+        <label for  = "cst">Central Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "mst" id = "mst">
+        <label for  = "mst">Mountain Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "pst" id = "pst">
+        <label for  = "pst">Pacific Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "ast" id = "ast">
+        <label for  = "ast">Alaska Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "hst" id = "hst">
+        <label for  = "hst">Hawaii-Aleutian Standard Time</label><br>
+        <button type ="button" value = "Submit">Submit</button>
+    </form>
+    <br>
+    <div id = "printtz">
+
+
+    </div>
 </body>
 </html>
