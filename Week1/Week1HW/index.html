@@ -20,13 +20,17 @@
         <input name = "timezone", type = "radio" value = "ast" id = "ast">
         <label for  = "ast">Alaska Standard Time</label><br>
         <input name = "timezone", type = "radio" value = "hst" id = "hst">
-        <label for  = "hst">Hawaii-Aleutian Standard Time</label><br>
+        <label for  = "hst">Hawaii-Aleutian Standard Time</label>
+        <br>
+        <br>
         <button type ="button" value = "Submit" onclick="readForm()">Submit</button>
     </form>
     <br>
-    <div id = "printtz">
+    <div id = "printTz"></div>
+    <br>
+    <div id = "printClock"></div>
 
-        <script type = "text/javascript">
+    <script type = "text/javascript">
         function readForm(){
             radioButtons = document.getElementsByName("timezone");
             inputVal = radioButtons[0].value;
@@ -37,12 +41,36 @@
                     inputVal = radioButtons[i].value;
                 }
             }
-            document.getElementById("printtz").innerHTML = inputVal;
+            document.getElementById("printTz").innerHTML = inputVal;
 
         }
+
+        function printTime(){
+            var myTime = new Date();
+            var hr = myTime.getHours();
+            var min = myTime.getMinutes();
+            var sec = myTime.getSeconds();
+            var session;
+
+            if(hr >= 12)
+            {
+                
+                session = "pm";
+
+                if(hr > 12)
+                {
+                    hr = hr % 12;
+                }
+            }
+            else{
+                session = "am";
+            }
+
+            var printVal = hr + ":" + min + ":" + sec + session;
+            document.getElementById("printClock").innerHTML = printVal;
+            setTimeout(printTime, 1000);
+        }
+        printTime();
         </script>
-
-
-    </div>
 </body>
 </html>
