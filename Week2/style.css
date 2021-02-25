@@ -6,9 +6,30 @@ body{
     background-color: teal;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 25px;
-    color: green;
+    color: white;
 
+}
+
+.timezone{
+    font-weight: 200;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    background-color:black;
+    border: 10px solid white;
     
+    color: red;
+    font-size: 100px;
+    margin-left: 250px;
+
+    -webkit-box-shadow: 0px 0px 43px 20px #FF0000; 
+    box-shadow: 0px 0px 43px 20px #FF0000;
     
 
 }
