@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myDocument</title>
+    <link rel = "stylesheet", href = "style.css">
+</head>
+<body>
+    
+
+    <form>
+        <p>Select Your Timezone:</p>
+        <input name = "timezone", type = "radio" value = "est" id = "est">
+        <label for  = "est">Eastern Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "cst" id = "cst">
+        <label for  = "cst">Central Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "mst" id = "mst">
+        <label for  = "mst">Mountain Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "pst" id = "pst">
+        <label for  = "pst">Pacific Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "ast" id = "ast">
+        <label for  = "ast">Alaska Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "hst" id = "hst">
+        <label for  = "hst">Hawaii-Aleutian Standard Time</label>
+        <br>
+        <br>
+        <button type ="button" value = "Submit" onclick="readForm()">Submit</button>
+    </form>
+    <br>
+    <div id = "printTz"></div>
+    <br>
+    <div id = "printClock"></div>
+
+    <script type = "text/javascript">
+    var offset = 0;
+    
+        function readForm(){
+            radioButtons = document.getElementsByName("timezone");
+            inputVal = radioButtons[0].value;
+            for(var i = 0; i < radioButtons.length; i++)
+            {
+                if(radioButtons[i].checked == true)
+                {
+                    inputVal = radioButtons[i].value;
+                }
+            }
+            document.getElementById("printTz").innerHTML = inputVal;
+            switch(inputVal){
+                case "hst":
+                    offset = -2;
+                    break;
+                case "ast":
+                    offset = -1;
+                    break;
+                case "ast":
+                    offset = 0;
+                    break;
+                case "mst":
+                    offset = 1;
+                    break;
+                case "cst":
+    	            offset = 2;
+    	            break;
+                case "est":
+    	            offset = 3;
+    	            break;
+                default:
+    	            offset = 0;
+    	            break;
+            }        
+
+        }
+
+        function printTime(){
+            var myTime = new Date();
+            var hr = (myTime.getHours() + offset) % 24;
+            var min = myTime.getMinutes();
+            var sec = myTime.getSeconds();
+            var session;
+            if(hr < 0)
+            {
+                hr = 24 + hr
+            }
+
+            if(hr >= 12)
+            {
+                
+                session = "pm";
+
+                if(hr > 12)
+                {
+                    hr = hr % 12;
+                }
+            }
+            else{
+                session = "am";
+            }
+            var myZeroesMin = "";
+            if(min < 10)
+            {
+                myZeroesMin = "0";
+            }
+            var myZeroesSec = "";
+            if(sec < 10)
+            {
+                myZeroesSec = "0";
+            }
+            var printVal = hr + ":" + myZeroesMin + min + ":" + myZeroesSec + sec + session;
+            document.getElementById("printClock").innerHTML = printVal;
+            setTimeout(printTime, 1000);
+        }
+        printTime();
+        </script>
+</body>
+</html>
