@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <script defer src="script.js"></script>
+    <title>myDocument</title>
+    </head>
+<body>
+    
+<div class = "timezone">
+    <form>
+        <p>Select Your Timezone:</p>
+        <input name = "timezone", type = "radio" value = "est" id = "est">
+        <label for  = "est">Eastern Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "cst" id = "cst">
+        <label for  = "cst">Central Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "mst" id = "mst">
+        <label for  = "mst">Mountain Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "pst" id = "pst">
+        <label for  = "pst">Pacific Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "ast" id = "ast">
+        <label for  = "ast">Alaska Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "hst" id = "hst">
+        <label for  = "hst">Hawaii-Aleutian Standard Time</label>
+        <br>
+        <br>
+        <button type ="button" value = "Submit" onclick="readForm()">Submit</button>
+    </form>
+    <br>
+    <div id = "printTz"></div>
+</div>
+  
+    <br>
+    <div class = "clock" id = "printClock"></div>
+
+</body>
+</html>
