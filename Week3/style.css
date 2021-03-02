@@ -14,3 +14,27 @@ body{
     font-weight: 200;
     font-family:Arial, Helvetica, sans-serif;
 }
+
+.clock{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    margin-left: 50px;
+    border-radius: 50%;
+    border: 10px solid black;
+
+}
+
+.clock::after{
+    position: absolute;
+    content: '';
+    height: 20px; 
+    width: 20px;
+    border-radius: 50px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
