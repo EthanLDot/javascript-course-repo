@@ -72,7 +72,7 @@ function printTime(){
         myZeroesSec = "0";
     }
     var printVal = hr + ":" + myZeroesMin + min + ":" + myZeroesSec + sec + session;
-    document.getElementById("printClock").innerHTML = printVal;
+    //document.getElementById("printClock").innerHTML = printVal;
     setTimeout(printTime, 1000);
 }
 printTime();
