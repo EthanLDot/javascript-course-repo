@@ -36,6 +36,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 100;
     
 }
 
@@ -86,3 +87,32 @@ body{
 .clock .number12{
     --rotation: 360deg;
 }
+
+.clock .hand{
+    background-color: black;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clock .hand.hour{
+    width: 10px;
+    height: 20%;
+    z-index: 10;
+}
+.clock .hand.minute{
+    width: 5px;
+    height: 40%;
+    z-index: 11;
+}
+.clock .hand.second{
+    width: 1px;
+    height: 40%;
+    background-color: red;
+    z-index: 12;
+}
+
