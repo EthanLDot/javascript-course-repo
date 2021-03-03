@@ -89,10 +89,12 @@ body{
 }
 
 .clock .hand{
+    --rotation: 60;
     background-color: black;
     left: 50%;
     bottom: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%,0) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
     position: absolute;
     border: 1px solid white;
     border-top-left-radius: 10px;
@@ -115,4 +117,3 @@ body{
     background-color: red;
     z-index: 12;
 }
-
