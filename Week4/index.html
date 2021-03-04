@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <script defer src="script.js"></script>
+    <title>myDocument</title>
+    </head>
+<body>
+    
+<div class = "timezone">
+    <form>
+        <p>Select Your Timezone:</p>
+        <input name = "timezone", type = "radio" value = "est" id = "est">
+        <label for  = "est">Eastern Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "cst" id = "cst">
+        <label for  = "cst">Central Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "mst" id = "mst">
+        <label for  = "mst">Mountain Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "pst" id = "pst">
+        <label for  = "pst">Pacific Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "ast" id = "ast">
+        <label for  = "ast">Alaska Standard Time</label><br>
+        <input name = "timezone", type = "radio" value = "hst" id = "hst">
+        <label for  = "hst">Hawaii-Aleutian Standard Time</label>
+        <br>
+        <br>
+        <button type ="button" value = "Submit" onclick="readForm()">Submit</button>
+    </form>
+    <br>
+    <div id = "printTz"></div>
+</div>
+  
+    <br>
+    <div class = "clock" id = "printClock">
+		<div class="number number1">1</div>
+		<div class="number number2">2</div>
+		<div class="number number3">3</div>
+		<div class="number number4">4</div>
+		<div class="number number5">5</div>
+		<div class="number number6">6</div>
+		<div class="number number7">7</div>
+		<div class="number number8">8</div>
+		<div class="number number9">9</div>
+		<div class="number number10">10</div>
+		<div class="number number11">11</div>
+		<div class="number number12">12</div>
+        ​<div class="hand hour" data-hour-hand ></div>
+        ​<div class="hand minute" data-minute-hand></div>
+        ​<div class="hand second" data-second-hand></div>
+    </div>
+
+    <div class = "digital" id = "digital clock">
+        
+    </div>
+
+</body>
+</html>
