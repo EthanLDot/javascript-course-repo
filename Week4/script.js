@@ -112,3 +112,14 @@ function setAnalog()
 }
 
 setAnalog()
+
+function setDay()
+{
+    document.body.style.backgroundColor = "teal";
+}
+
+function setNight()
+{
+    document.body.style.backgroundColor ="black";
+
+}
