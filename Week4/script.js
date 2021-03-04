@@ -2,6 +2,8 @@ var offset = 0;
 const hourHand = document.querySelector('[data-hour-hand');
 const minuteHand = document.querySelector('[data-minute-hand');
 const secondHand = document.querySelector('[data-second-hand');
+var digital = document.getElementById('digital clock');
+var analog = document.getElementById('printClock')
 setInterval(printTime, 1000)
     
 function readForm(){
@@ -96,3 +98,17 @@ function setRotation(element, rotationRatio)
     element.style.setProperty(`--rotation`, rotationRatio * 360);
 }
 printTime();
+
+function setDigital()
+{
+    analog.style.display = "none"
+    digital.style.display = "flex"
+}
+
+function setAnalog()
+{
+    analog.style.display = "flex"
+    digital.style.display = "none"
+}
+
+setAnalog()
